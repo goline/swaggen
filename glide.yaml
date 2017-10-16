@@ -1,0 +1,9 @@
+package: github.com/goline/swaggen
+import:
+- package: github.com/goline/lapi
+  version: ~1.0.12
+testImport:
+- package: github.com/onsi/ginkgo
+  version: ~1.4.0
+- package: github.com/onsi/gomega
+  version: ~1.2.0
