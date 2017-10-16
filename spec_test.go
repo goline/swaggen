@@ -12,7 +12,7 @@ var _ = Describe("Spec", func() {
 		versions := []string{"2.1", "2"}
 		c := make(chan bool, len(versions))
 		for _, version := range versions {
-			go func() {
+			go func(version string, c chan bool) {
 				defer GinkgoRecover()
 				defer func() {
 					r := recover()
@@ -22,7 +22,7 @@ var _ = Describe("Spec", func() {
 				}()
 
 				swaggen.New(version)
-			}()
+			}(version, c)
 		}
 
 		for i := 0; i < len(versions); i++ {
