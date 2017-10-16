@@ -18,7 +18,7 @@ func New(version string) Spec {
 	switch version {
 	case "2", "2.0", "2.0.0":
 	case "3", "3.0", "3.0.0":
-		spec = new(SpecV3)
+		spec = newV3()
 	}
 
 	if spec == nil {
